@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeDatabaseModel1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="EmployeeDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="attendances" EntityType="EmployeeDatabaseModel1.attendance" />
+    <EntitySet Name="Employees" EntityType="EmployeeDatabaseModel1.Employee" />
+    <EntitySet Name="leaves" EntityType="EmployeeDatabaseModel1.leave" />
+    <AssociationSet Name="FK_attendance_Employee" Association="EmployeeDatabaseModel1.FK_attendance_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="attendance" EntitySet="attendances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_leave_Employee" Association="EmployeeDatabaseModel1.FK_leave_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="leave" EntitySet="leaves" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="attendance">
+    <Key>
+      <PropertyRef Name="Emp_id" />
+      <PropertyRef Name="Emp_name" />
+      <PropertyRef Name="attendance1" />
+      <PropertyRef Name="date" />
+    </Key>
+    <Property Name="Emp_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Emp_name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="attendance1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="date" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Employee" Relationship="EmployeeDatabaseModel1.FK_attendance_Employee" FromRole="attendance" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="address" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="gender" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="position" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="birthdate" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="eduaction" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="mail" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="salary" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="usertype" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="attendances" Relationship="EmployeeDatabaseModel1.FK_attendance_Employee" FromRole="Employee" ToRole="attendance" />
+    <NavigationProperty Name="leaves" Relationship="EmployeeDatabaseModel1.FK_leave_Employee" FromRole="Employee" ToRole="leave" />
+  </EntityType>
+  <EntityType Name="leave">
+    <Key>
+      <PropertyRef Name="leave_id" />
+    </Key>
+    <Property Name="Emp_id" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="leave_reason" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="leave_from" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="leave_to" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="emp_name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="user_name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="leave_status" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="leave_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Employee" Relationship="EmployeeDatabaseModel1.FK_leave_Employee" FromRole="leave" ToRole="Employee" />
+  </EntityType>
+  <Association Name="FK_attendance_Employee">
+    <End Role="Employee" Type="EmployeeDatabaseModel1.Employee" Multiplicity="1" />
+    <End Role="attendance" Type="EmployeeDatabaseModel1.attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="attendance">
+        <PropertyRef Name="Emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_leave_Employee">
+    <End Role="Employee" Type="EmployeeDatabaseModel1.Employee" Multiplicity="0..1" />
+    <End Role="leave" Type="EmployeeDatabaseModel1.leave" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="leave">
+        <PropertyRef Name="Emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

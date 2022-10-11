@@ -1,0 +1,21 @@
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\bin\Debug\Employee MAnagement.exe.config
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\bin\Debug\Employee MAnagement.exe
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\bin\Debug\Employee MAnagement.pdb
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee MAnagement.csproj.ResolveComReference.cache
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.adduser.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.First_Page.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.EmployeeHome.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.ForgetPass.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.leaveappUSerSide.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.LeaveApplication.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.markattendence.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.Leave.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.HomePage.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.Login.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.Properties.Resources.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.Update.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.updateRecord.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee_MAnagement.ViewRecord.resources
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee MAnagement.csproj.GenerateResource.Cache
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee MAnagement.exe
+C:\Users\Jayesh\Documents\Visual Studio 2010\Projects\Employee MAnagement\Employee MAnagement\obj\x86\Debug\Employee MAnagement.pdb

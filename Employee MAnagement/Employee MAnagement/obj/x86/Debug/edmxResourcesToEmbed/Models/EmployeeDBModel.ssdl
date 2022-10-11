@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeDatabaseModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="EmployeeDatabaseModel1StoreContainer">
+    <EntitySet Name="attendance" EntityType="EmployeeDatabaseModel1.Store.attendance" store:Type="Tables" store:Schema="dbo" store:Name="attendance">
+      <DefiningQuery>SELECT 
+      [attendance].[Emp_id] AS [Emp_id], 
+      [attendance].[Emp_name] AS [Emp_name], 
+      [attendance].[attendance] AS [attendance], 
+      [attendance].[date] AS [date]
+      FROM [dbo].[attendance] AS [attendance]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Employee" EntityType="EmployeeDatabaseModel1.Store.Employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="leave" EntityType="EmployeeDatabaseModel1.Store.leave" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_attendance_Employee" Association="EmployeeDatabaseModel1.Store.FK_attendance_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="attendance" EntitySet="attendance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_leave_Employee" Association="EmployeeDatabaseModel1.Store.FK_leave_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="leave" EntitySet="leave" />
+    </AssociationSet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'EmployeeDatabase.dbo.attendance' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="attendance">
+    <Key>
+      <PropertyRef Name="Emp_id" />
+      <PropertyRef Name="Emp_name" />
+      <PropertyRef Name="attendance" />
+      <PropertyRef Name="date" />
+    </Key>
+    <Property Name="Emp_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Emp_name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="attendance" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="date" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="gender" Type="varchar" MaxLength="10" />
+    <Property Name="position" Type="nvarchar" MaxLength="50" />
+    <Property Name="birthdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="eduaction" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="mail" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="salary" Type="numeric" />
+    <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="usertype" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="leave">
+    <Key>
+      <PropertyRef Name="leave_id" />
+    </Key>
+    <Property Name="Emp_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="leave_reason" Type="nvarchar" MaxLength="50" />
+    <Property Name="leave_from" Type="nvarchar" MaxLength="50" />
+    <Property Name="leave_to" Type="nvarchar" MaxLength="50" />
+    <Property Name="emp_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="leave_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="leave_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_attendance_Employee">
+    <End Role="Employee" Type="EmployeeDatabaseModel1.Store.Employee" Multiplicity="1" />
+    <End Role="attendance" Type="EmployeeDatabaseModel1.Store.attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="attendance">
+        <PropertyRef Name="Emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_leave_Employee">
+    <End Role="Employee" Type="EmployeeDatabaseModel1.Store.Employee" Multiplicity="0..1" />
+    <End Role="leave" Type="EmployeeDatabaseModel1.Store.leave" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="leave">
+        <PropertyRef Name="Emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
